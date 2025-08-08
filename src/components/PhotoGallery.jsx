@@ -4,10 +4,12 @@ export default function PhotoGallery() {
   const [photos, setPhotos] = useState([]);
   const [query, setQuery] = useState('nature');
 
+  const API_KEY = import.meta.env.VITE_PEXELS_API_KEY;
+
   useEffect(() => {
     fetch(`https://api.pexels.com/v1/search?query=${query}&per_page=12`, {
       headers: {
-        Authorization: 'TNr9MAajgPcMfXLRlXO4k8vEC2B8A5O3jjnLbiBhO109KIu2fMuJ4GPI',
+        Authorization: API_KEY,
       },
     })
       .then((res) => res.json())
