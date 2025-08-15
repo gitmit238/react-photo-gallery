@@ -1,16 +1,33 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link } from 'react-router-dom';
 
 export default function Header() {
   return (
-    <header className="bg-dark text-white py-3">
-      <div className="container d-flex justify-content-between align-items-center">
-        <h1 className="h4 mb-0">🖼️ PhotoGallery</h1>
-        <nav>
-          <a href="#" className="text-white text-decoration-none me-3">Home</a>
-          <a href="#" className="text-white text-decoration-none">About</a>
-        </nav>
+    <nav className="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+      <div className="container">
+        <Link className="navbar-brand" to="/">PhotoGallery</Link>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav ms-auto">
+            <li className="nav-item">
+              <Link className="nav-link" to="/">Home</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/about">About</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/contact">Contact</Link>
+            </li>
+          </ul>
+        </div>
       </div>
-    </header>
+    </nav>
   );
 }
